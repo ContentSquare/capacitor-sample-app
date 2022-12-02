@@ -42,7 +42,7 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <GdprModal isOpen={isOpen} onDismissModale={() => setIsOpen(false)} />
+      <GdprModal isOpen={isOpen} onDismissModal={() => setIsOpen(false)} />
       <IonReactRouter>
         <IonRouterOutlet>
           <Route exact path="/home" component={Home} />
