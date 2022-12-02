@@ -23,16 +23,10 @@ const ScreenModal = () => {
                 <IonButton id="open-modal">
                     Open
                 </IonButton>
-
-                <IonModal ref={modal} trigger="open-modal" onWillDismiss={onWillDismiss}>
-                    <IonHeader>
-                        <IonToolbar>
-                            <IonTitle>Modal Screen</IonTitle>
-                        </IonToolbar>
-                    </IonHeader>
+                <IonModal ref={modal} trigger="open-modal" onWillDismiss={(ev) => onWillDismiss(ev)}>
                     <IonContent className="ion-padding">
                         <p>This is the modal screen. When it's closed, the opener screen will also send its screen name.</p>
-                        <IonButton onClick={() => modal.current?.dismiss()} expand="full">Close</IonButton>
+                        <IonButton onClick={() => modal.current?.dismiss()}>Close</IonButton>
                     </IonContent>
                 </IonModal>
             </IonContent>
