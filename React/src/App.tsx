@@ -57,10 +57,20 @@ const mapScreenURL: Record<string, string> = {
   "/screen-views/tabs/three": "Tab 3",
 };
 
-// Some URLs could be excluded. For example, the "screen-slide" is only a container. We only need to send the name of the slide screens
+// Some URLs could be excluded. For example, "/screen-views/slide" and "/screen-views/tabs" are only a container. 
+// We only need to send the name of the slide screens
 const excludedURL = [
-  "/screen-views/screen-slide"
+  "/screen-views/slide",
+  "/screen-views/tabs"
 ]
+
+export const sendScreenName = (visitedUrl : string) => {
+  if (visitedUrl !== '/' && excludedURL.filter(url => visitedUrl === url).length === 0) {
+    ContentsquarePlugin.sendScreenName(visitedUrl)
+      .then(_ => console.log('Screen name ' + mapScreenURL[visitedUrl] + ' sent'))
+      .catch(e => console.log(e));
+  }
+}
 
 const App: React.FC = () => {
 
@@ -70,11 +80,7 @@ const App: React.FC = () => {
   useEffect(() => {
     // We subscribe to React router events. When the URL changes, we send the corresponding screen name
     const visitedUrl = location.pathname;
-    if (visitedUrl !== '/' && excludedURL.filter(url => visitedUrl !== url).length === 0) {
-      ContentsquarePlugin.sendScreenName(visitedUrl)
-        .then(_ => console.log('Screen name ' + mapScreenURL[visitedUrl] + ' sent'))
-        .catch(e => console.log(e));
-    }
+    sendScreenName(visitedUrl);
   }, [location]);
 
   return (
