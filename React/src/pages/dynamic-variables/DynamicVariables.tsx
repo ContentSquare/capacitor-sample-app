@@ -1,16 +1,41 @@
-import { IonBackButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { ContentsquarePlugin, DynamicVarItem } from '@contentsquare/capacitor-plugin';
+import { IonBackButton, IonButtons, IonCard, IonCardContent, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonToast } from '@ionic/react';
 import DynamicVariablesForm from '../../components/dynamic-variables-form/DynamicVariablesForm';
 import './DynamicVariables.css'
 
 const DynamicVariables = () => {
 
-    const handleFormSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+    const [present] = useIonToast();
+
+    /**
+     * This function showcases how to use dynamic variables to gather additional data about the session
+     * @param event Submitted form
+     * @param type Indication to send string or numeric dynamic variable
+     */
+    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>, type: "int" | "string") => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        const keyVal = data.get("keyField");
-        const valueVal = data.get("valueField");
-        console.log('keyVal : ', keyVal);
-        console.log('valueVal : ', valueVal);
+        const keyVal = data.get("keyField")?.toString();
+        const valueVal = data.get("valueField")?.toString();
+
+        if (keyVal && valueVal) {
+            const dynamicVarItem: DynamicVarItem = {
+                dynVarKey: keyVal,
+                dynVarValue: type === "string" ? valueVal : parseInt(valueVal)
+            }
+            ContentsquarePlugin.sendDynamicVar(dynamicVarItem)
+                .then(_ => {
+                    console.log(`${dynamicVarItem} sent successfully`);
+                })
+                .catch(e => console.log(e));
+
+            event.currentTarget.reset();
+            present({
+                message: `Dynamic variable (with ${type} value) sent successfully`,
+                duration: 2500,
+                position: 'bottom'
+            });
+        }
     }
 
     return (
@@ -40,7 +65,7 @@ const DynamicVariables = () => {
                         <DynamicVariablesForm
                             valueFormInputMode="text"
                             valueFormType="text"
-                            onFormSubmit={(ev) => handleFormSubmit(ev)}
+                            onFormSubmit={(ev) => handleFormSubmit(ev, "string")}
                         ></DynamicVariablesForm>
                     </IonCardContent>
                 </IonCard>
@@ -53,9 +78,10 @@ const DynamicVariables = () => {
                         <DynamicVariablesForm
                             valueFormInputMode="numeric"
                             valueFormType="number"
-                            onFormSubmit={(ev) => handleFormSubmit(ev)}
+                            onFormSubmit={(ev) => handleFormSubmit(ev, "int")}
                         ></DynamicVariablesForm>
                     </IonCardContent>
+
                 </IonCard>
             </IonContent>
         </IonPage>
