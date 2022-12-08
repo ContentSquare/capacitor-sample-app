@@ -21,6 +21,7 @@ end
 target 'App' do
   capacitor_pods
   # Add your Pods here
+  pod 'CS_iOS_SDK_STATIC', '4.15.1'
 end
 
 post_install do |installer|
