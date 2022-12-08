@@ -1,5 +1,5 @@
 import { ContentsquarePlugin, DynamicVarItem } from '@contentsquare/capacitor-plugin';
-import { IonBackButton, IonButtons, IonCard, IonCardContent, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonToast } from '@ionic/react';
+import { IonBackButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonToast } from '@ionic/react';
 import DynamicVariablesForm from '../../components/dynamic-variables-form/DynamicVariablesForm';
 import './DynamicVariables.css'
 
