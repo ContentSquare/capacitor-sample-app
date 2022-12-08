@@ -26,7 +26,7 @@ const ScreenSlide = () => {
             <IonContent className="ion-padding">
                 <Swiper
                     modules={[Navigation, Pagination]}
-                    navigation={true}
+                    navigation={false}
                     pagination={true}
                     centeredSlides={true}
                     onSlideChange={(s) => onSlideChange(s)}

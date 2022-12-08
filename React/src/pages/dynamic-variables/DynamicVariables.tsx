@@ -1,5 +1,6 @@
-import { IonBackButton, IonButtons, IonCard, IonCardContent, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import DynamicVariablesForm from '../../components/dynamic-variables-form/DynamicVariablesForm';
+import './DynamicVariables.css'
 
 const DynamicVariables = () => {
 
@@ -23,13 +24,18 @@ const DynamicVariables = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding" >
-                <IonCard className="ion-padding" >
+                <IonCard>
+                    <IonCardHeader>
+                        <IonCardTitle>Dynamic variables</IonCardTitle>
+                    </IonCardHeader>
                     <IonCardContent>
-                        <IonCardTitle>This class showcases how to use dynamic variables to gather additional data about the session.</IonCardTitle>
+                        This class showcases how to use dynamic variables to gather additional data about the session.
                     </IonCardContent>
                 </IonCard>
-                <IonCard className="ion-padding">
-                    <IonCardTitle>Dynamic Var with string value</IonCardTitle>
+                <IonCard>
+                    <IonCardHeader>
+                        <IonCardTitle>Dynamic Var with string value</IonCardTitle>
+                    </IonCardHeader>
                     <IonCardContent>
                         <DynamicVariablesForm
                             valueFormInputMode="text"
@@ -39,8 +45,10 @@ const DynamicVariables = () => {
                     </IonCardContent>
                 </IonCard>
 
-                <IonCard className="ion-padding">
-                    <IonCardTitle>Dynamic Var with int value</IonCardTitle>
+                <IonCard>
+                    <IonCardHeader>
+                        <IonCardTitle>Dynamic Var with int value</IonCardTitle>
+                    </IonCardHeader>
                     <IonCardContent>
                         <DynamicVariablesForm
                             valueFormInputMode="numeric"

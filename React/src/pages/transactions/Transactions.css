@@ -12,3 +12,6 @@
     color: #fff;
 }
 
+ion-footer.ion-padding {
+    padding-bottom: 40px;
+}

@@ -6,7 +6,7 @@ const ScreenViews = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot="start">
-                        <IonBackButton text="Showcases" />
+                        <IonBackButton text="Showcases" defaultHref='/home'/>
                     </IonButtons>
                     <IonTitle>Screen Views</IonTitle>
                 </IonToolbar>

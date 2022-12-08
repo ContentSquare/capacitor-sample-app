@@ -6,7 +6,7 @@ const ScreenModal = () => {
 
     const modal = useRef<HTMLIonModalElement>(null);
 
-    function onWillDismiss(_ev: CustomEvent<OverlayEventDetail>) {}
+    function onWillDismiss(_ev: CustomEvent<OverlayEventDetail>) { }
 
     return (
         <IonPage>
@@ -24,10 +24,15 @@ const ScreenModal = () => {
                     Open
                 </IonButton>
 
-                <IonModal ref={modal} trigger="open-modal" onWillDismiss={(ev) => onWillDismiss(ev)}>
+                <IonModal ref={modal} trigger="open-modal" onWillDismiss={onWillDismiss}>
+                    <IonHeader>
+                        <IonToolbar>
+                            <IonTitle>Modal Screen</IonTitle>
+                        </IonToolbar>
+                    </IonHeader>
                     <IonContent className="ion-padding">
                         <p>This is the modal screen. When it's closed, the opener screen will also send its screen name.</p>
-                        <IonButton onClick={modal.current?.dismiss}>Close</IonButton>
+                        <IonButton onClick={() => modal.current?.dismiss()} expand="full">Close</IonButton>
                     </IonContent>
                 </IonModal>
             </IonContent>

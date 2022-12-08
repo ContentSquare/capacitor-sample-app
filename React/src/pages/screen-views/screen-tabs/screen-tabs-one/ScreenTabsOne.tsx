@@ -1,16 +1,14 @@
 
-import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { arrowBackOutline } from 'ionicons/icons';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 const ScreenTabsOne = () => {
     return (
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonButton routerLink='/screen-views' routerDirection='root'>
-                        <IonIcon icon={arrowBackOutline} />
-                        Screen views
-                    </IonButton>
+                    <IonButtons slot="start">
+                        <IonBackButton defaultHref='/screen-views' text="Screen Views" />
+                    </IonButtons>
                     <IonTitle>Tab 1</IonTitle>
                 </IonToolbar>
             </IonHeader>
