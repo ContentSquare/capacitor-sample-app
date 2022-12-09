@@ -57,16 +57,20 @@ const mapScreenURL: Record<string, string> = {
   "/screen-views/tabs/three": "Tab 3",
 };
 
-// Some URLs could be excluded. For example, "/screen-views/slide" and "/screen-views/tabs" are only a container. 
-// We only need to send the name of the slide screens
+// Some URLs could be excluded. For example, "/screen-views/slide" and "/screen-views/tabs" are only containers. 
+// We only need to send the name of the slide screens or tabs
 const excludedURL = [
   "/screen-views/slide",
   "/screen-views/tabs"
 ]
 
+/**
+ * Send the screen name to the SDK 
+ * @param visitedUrl url visited
+ */
 export const sendScreenName = (visitedUrl : string) => {
   if (visitedUrl !== '/' && excludedURL.filter(url => visitedUrl === url).length === 0) {
-    ContentsquarePlugin.sendScreenName(visitedUrl)
+    ContentsquarePlugin.sendScreenName(mapScreenURL[visitedUrl])
       .then(_ => console.log('Screen name ' + mapScreenURL[visitedUrl] + ' sent'))
       .catch(e => console.log(e));
   }

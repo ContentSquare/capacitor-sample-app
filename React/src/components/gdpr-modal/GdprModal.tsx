@@ -6,6 +6,10 @@ interface GdprModalProps {
     isOpen: boolean;
     onDismissModal: VoidFunction
 }
+
+/**
+ * We present a modal to ask the user to accept the Privacy Policy if not accepted at launch
+ */
 const GdrpModal: React.FC<GdprModalProps> = (props) => {
 
     const handleAcceptTerm = () => {
