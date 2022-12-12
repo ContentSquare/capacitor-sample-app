@@ -8,12 +8,12 @@ const ScreenModal = () => {
 
     // When the user close the modal, this screen sends its name again
     const onWillDismiss = () => {
-        sendScreenName("/screen-views/screen-modal");
+        sendScreenName("/screen-views/modal");
     }
 
     // When the user opens the modal, we send the screen name of the modal
     const presentModal = () => {
-        sendScreenName("/screen-views/screen-modal/modal");
+        sendScreenName("/screen-views/modal/my-modal");
     }
 
     return (
