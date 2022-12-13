@@ -1,15 +1,29 @@
 import { IonModal, IonHeader, IonToolbar, IonButton, IonTitle, IonContent, IonItem, IonLabel } from "@ionic/react"
+import { ContentsquarePlugin } from '@contentsquare/capacitor-plugin';
 
 
 interface GdprModalProps {
     isOpen: boolean;
-    onDismissModale: VoidFunction
+    onDismissModal: VoidFunction
 }
+
+/**
+ * We present a modal to ask the user to accept the Privacy Policy if not accepted at launch
+ */
 const GdrpModal: React.FC<GdprModalProps> = (props) => {
 
     const handleAcceptTerm = () => {
+        // We call the optIn() method of the SDK and store the value locally
+        ContentsquarePlugin.optIn();
         localStorage.setItem("userConsent", "true");
-        props.onDismissModale();
+        props.onDismissModal();
+    }
+
+    const handleRejectTerm = () => {
+        // We call the optOut() method of the SDK and delete the value locally
+        ContentsquarePlugin.optOut();
+        localStorage.removeItem("userConsent");
+        props.onDismissModal();
     }
 
     return (
@@ -33,9 +47,8 @@ const GdrpModal: React.FC<GdprModalProps> = (props) => {
                 <IonItem>
                     <IonLabel class="ion-text-wrap">If you reject the Privacy Policy, Contentsquare SDK features will be
                         disabled. You can accept the policy in the "Privacy" page</IonLabel>
-                    <IonButton color="warning" expand="block" onClick={props.onDismissModale}>Reject</IonButton>
+                    <IonButton color="warning" expand="block" onClick={handleRejectTerm}>Reject</IonButton>
                 </IonItem>
-
             </IonContent >
         </IonModal >
     )

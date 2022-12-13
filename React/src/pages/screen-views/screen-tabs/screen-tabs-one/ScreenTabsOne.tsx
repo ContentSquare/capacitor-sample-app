@@ -4,7 +4,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, Io
 const ScreenTabsOne = () => {
     return (
         <IonPage>
-            <IonHeader>
+            <IonHeader >
                 <IonToolbar>
                     <IonButtons slot="start">
                         <IonBackButton defaultHref='/screen-views' text="Screen Views" />

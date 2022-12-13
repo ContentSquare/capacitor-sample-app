@@ -1,13 +1,15 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { IonReactRouter } from '@ionic/react-router';
+import { createRoot } from 'react-dom/client';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(
-    <App />
+    <IonReactRouter>
+        <App />
+    </IonReactRouter>
 );
 
 // If you want your app to work offline and load faster, you can change
@@ -19,3 +21,4 @@ serviceWorkerRegistration.unregister();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
