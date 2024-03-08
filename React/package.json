@@ -10,7 +10,7 @@
     "@capacitor/ios": "4.5.0",
     "@capacitor/keyboard": "4.1.0",
     "@capacitor/status-bar": "4.1.0",
-    "@contentsquare/capacitor-plugin": "^0.2.0",
+    "@contentsquare/capacitor-plugin": "4.0.0",
     "@ionic/react": "^6.3.8",
     "@ionic/react-router": "^6.3.8",
     "@testing-library/jest-dom": "^5.11.9",
