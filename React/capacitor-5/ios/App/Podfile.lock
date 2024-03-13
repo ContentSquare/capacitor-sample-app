@@ -1,0 +1,63 @@
+PODS:
+  - Capacitor (5.7.2):
+    - CapacitorCordova
+  - CapacitorApp (5.0.7):
+    - Capacitor
+  - CapacitorCordova (5.7.2)
+  - CapacitorHaptics (5.0.7):
+    - Capacitor
+  - CapacitorKeyboard (5.0.8):
+    - Capacitor
+  - CapacitorStatusBar (5.0.7):
+    - Capacitor
+  - ContentsquareCapacitorPlugin (5.0.0):
+    - Capacitor
+    - CS_iOS_SDK_STATIC (= 4.28.0)
+  - CS_iOS_SDK_STATIC (4.28.0):
+    - SwiftProtobuf (~> 1.0)
+  - SwiftProtobuf (1.25.2)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
+  - "ContentsquareCapacitorPlugin (from `../../node_modules/@contentsquare/capacitor-plugin`)"
+
+SPEC REPOS:
+  trunk:
+    - CS_iOS_SDK_STATIC
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/@capacitor/app"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorHaptics:
+    :path: "../../node_modules/@capacitor/haptics"
+  CapacitorKeyboard:
+    :path: "../../node_modules/@capacitor/keyboard"
+  CapacitorStatusBar:
+    :path: "../../node_modules/@capacitor/status-bar"
+  ContentsquareCapacitorPlugin:
+    :path: "../../node_modules/@contentsquare/capacitor-plugin"
+
+SPEC CHECKSUMS:
+  Capacitor: fc7ef6d935eafb0df9eaaf109ca69be16c51a2d2
+  CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
+  CapacitorCordova: 70b13b8fddb6f35d8adcfe06cb5045c07f35f6de
+  CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
+  CapacitorKeyboard: aec619a578235c6ce279075009a2689c2cf5c42c
+  CapacitorStatusBar: f390fbb49b82ffb754ea4b3cf71dc8b048baf3e7
+  ContentsquareCapacitorPlugin: 17109d8f448ef7d3e1b67e78295716fd5c7bc061
+  CS_iOS_SDK_STATIC: 0e04929473ab310a6b9a56e40a5804d9a68d6f13
+  SwiftProtobuf: 407a385e97fd206c4fbe880cc84123989167e0d1
+
+PODFILE CHECKSUM: 9149736e47c0fb38624f72a617ccb1eb08be8846
+
+COCOAPODS: 1.14.3
