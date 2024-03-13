@@ -1,0 +1,17 @@
+.empty-icon-circle {
+    border-radius: 50%;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    height: 80px;
+    width: 80px;
+}
+
+.empty-icon-color {
+    background: #d6d9dd;
+    color: #fff;
+}
+
+ion-footer.ion-padding {
+    padding-bottom: 40px;
+}
