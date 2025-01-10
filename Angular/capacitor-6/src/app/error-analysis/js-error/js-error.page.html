@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-js-error"></ion-back-button>
+    </ion-buttons>
+    <ion-title>JS Error</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Click to trigger errors</h2>
+  <ion-button type="button" id="btn-jserror-throwinlineerror" (click)="throwInlineError()" expand="block">Throw from inline script</ion-button>
+  <ion-button type="button" id="btn-jserror-throwinlineerrorwith1024char" (click)="throwInlineErrorWith1024Char()" expand="block">Throw 1024 char error</ion-button>
+  <ion-button type="button" id="btn-jserror-throwinlineerrorwith1023char" (click)="throwInlineErrorWith1023Char()" expand="block">Throw 1023 char error</ion-button>
+  <ion-button type="button" id="btn-jserror-throwinlineerrorwith1025char" (click)="throwInlineErrorWith1025Char()" expand="block">Throw 1025 char error</ion-button>
+  <ion-button type="button" id="btn-jserror-throwinlineerrorwithoutmessage" (click)="throwInlineErrorWithoutMessage()" expand="block">Blank Error</ion-button>
+  <ion-button type="button" id="btn-jserror-throwmultipleErrors" (click)="throwMultipleErrors()" expand="block">Bulk errors</ion-button>
+  <ion-button type="button" id="btn-jserror-throwinlineErrorWithPII" (click)="throwInlineErrorWithPII()" expand="block">Throw error with PII</ion-button>
+</ion-content>

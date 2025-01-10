@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-custom-var"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Custom Var</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of customVarItems; let i=index" class="ion-padding">
+   
+      <ion-button [color]="item.color" (click)="sendCVar(item)" expand="block"
+      id="btn-custom-var-{{i}}">
+      {{ item.title }}
+      </ion-button>
+     
+      <ion-label >
+        {{ item.description }}
+      </ion-label>
+   
+   
+  </ion-card>
+</ion-content>

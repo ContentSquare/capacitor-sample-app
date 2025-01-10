@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-telemetry"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Telemetry</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-button *ngFor="let item of telemetryItems; let i=index" (click)="collect(item)" expand="block"
+      id="btn-telemetry-{{i}}">
+      {{ item.title }}
+    </ion-button>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeApp()" id="back-button-spotify-tab1">
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Spotify app</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row
+    class="ion-no-padding"
+    *ngFor="let entry of data; let isFirst = first"
+  >
+    <!--  Section Title -->
+    <ion-col size="9">
+      <h2 class="section-header">{{ entry.title }}</h2>
+    </ion-col>
+    <ion-col size="3" class="ion-text-end"> </ion-col>
+
+    <!-- Horizontal scroll view -->
+
+    <div class="scrollmenu">
+      <div class="album" *ngFor="let album of entry.albums">
+        <div class="ion-justify-content-center">
+          <img [src]="'/assets/images/albums/'+dasherize(album.image)+'.jpg'" /><br>
+          <ion-note class="title">{{ album.title }}</ion-note>
+        </div>
+      
+      </div>
+      
+    </div>
+
+    <!-- <swiper-container slides-per-view="3" grid-rows="3">
+      <swiper-slide
+        *ngFor="let album of entry.albums"
+        
+        (click)="openAlbum(album)"
+      >
+        <img [src]="'/assets/images/albums/'+dasherize(album.image)+'.jpg'" />
+        
+      </swiper-slide>
+    </swiper-container> -->
+  </ion-row>
+</ion-content>

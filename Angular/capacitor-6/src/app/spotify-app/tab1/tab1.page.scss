@@ -1,0 +1,50 @@
+ion-content {
+    --padding-top: 40px;
+    --background: var(--ion-color-dark);
+}
+
+
+.section-header {
+    color: #fff;
+    font-family: 'Spotify';
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.title {
+    color: #fff;
+    font-family: 'Spotify';
+    font-size: small;
+}
+
+swiper-slide {
+   // display: block;
+    //text-align: left;
+    // img {
+    //     width: 150px;
+    //     height: 150px;
+    // }
+}
+
+swiper-container {
+    margin-bottom: 20px;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.album {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}

@@ -1,0 +1,29 @@
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false,
+  piiSelectors: {
+    PIISelectors: ['.css-mask-element, ion-avatar'], // DOM elements to be skipped
+    Attributes: [
+      {
+        selector: 'select#month option, select#year option', // CSS selectors
+        attrName: 'id', // Attribute name u want to mask
+      },
+      {
+        selector: '.link-page-7', // CSS selectors
+        attrName: ['href', 'name'], // Array  attribute names you want to mask
+      },
+    ],
+  },
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

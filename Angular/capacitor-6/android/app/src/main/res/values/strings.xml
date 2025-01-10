@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">testing-app-cap</string>
+    <string name="title_activity_main">testing-app-cap</string>
+    <string name="package_name">com.contentsquare.capacitor.testapp</string>
+    <string name="custom_url_scheme">com.contentsquare.capacitor.testapp</string>
+</resources>

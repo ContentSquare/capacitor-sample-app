@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-transaction"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-button *ngFor="let item of transactionItems; let i = index;" (click)="sendTransaction(item)" expand="block" id="btn-transaction-{{i}}">
+      {{item.title}}
+    </ion-button>
+   
+  </ion-card>
+</ion-content>

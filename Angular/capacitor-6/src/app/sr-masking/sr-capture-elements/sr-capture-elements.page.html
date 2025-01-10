@@ -1,0 +1,22 @@
+<ion-header data-cs-capture>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-sr-capture-elements"></ion-back-button>
+    </ion-buttons>
+    <ion-title>SR Capture Elements</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-padding">
+    <ion-card-title>Personal Data Selector</ion-card-title>
+    <ion-card-subtitle> Only Item1 should be visible in SR </ion-card-subtitle>
+
+    <ion-card-content>
+      <div class="item1" data-cs-capture>
+        Item 1. This should be displayed in SR
+      </div>
+      <div class="item2">Item 2. This should NOT be displayed in SR</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
