@@ -17,16 +17,10 @@ def capacitor_pods
   pod 'CapacitorHaptics', :path => '../../node_modules/@capacitor/haptics'
   pod 'CapacitorKeyboard', :path => '../../node_modules/@capacitor/keyboard'
   pod 'CapacitorStatusBar', :path => '../../node_modules/@capacitor/status-bar'
-  pod 'ContentsquareCapacitorPlugin', :path => '../../../capacitor3-plugin'
+  pod 'ContentsquareCapacitorPlugin', :path => '../../node_modules/@contentsquare/capacitor-plugin'
 end
 
 target 'App' do
-  capacitor_pods
-  # Add your Pods here
-   pod 'CS_iOS_SDK_STATIC', '4.34.0'
-end
-
-target 'App QA' do
   capacitor_pods
   # Add your Pods here
   pod 'CS_iOS_SDK_STATIC', '4.34.0'

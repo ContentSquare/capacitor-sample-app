@@ -43,15 +43,11 @@ export class AppComponent {
       }
     });
     this.platform.ready().then((readySource) => {
-      console.log('Platform ready from', readySource);
       this.initSRMasking();
     });
   }
 
   initSRMasking() {
-    console.log(
-      'set PII Selectors:' + JSON.stringify(environment.piiSelectors)
-    );
     ContentsquarePlugin.setPIISelectors(environment.piiSelectors);
   }
 }

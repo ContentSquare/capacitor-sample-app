@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>cs-urlscheme</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>cs-$(PRODUCT_BUNDLE_IDENTIFIER)</string>

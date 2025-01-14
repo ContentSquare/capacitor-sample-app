@@ -2,14 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "com.contentsquare.capacitor.testapp"
-    signingConfigs {
-        csSigningConfig {
-        storeFile file('../cs_release_key')
-        storePassword 'sampleappcs'
-        keyAlias 'key0'
-        keyPassword 'sampleappcs'
-        }
-    }
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.contentsquare.capacitor.testapp"
@@ -28,28 +20,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-         applicationVariants.all {
-            variant ->
-                variant.outputs.each {
-                output ->
-                    def flavor = variant.name
-                    project.ext { appName = 'AppCapacitor5' }
-                    output.outputFileName = "${project.ext.appName}_${flavor}.apk"
-                }
-            }
-    }
-    flavorDimensions "environment"
-    productFlavors {
-        dev {
-        dimension "environment"
-        manifestPlaceholders = [displayName: "Sample App Capacitor5"]
-        signingConfig signingConfigs.csSigningConfig
-        }
-        qa {
-        dimension "environment"
-        applicationIdSuffix ".qa"
-        manifestPlaceholders = [displayName: "Sample App Capacitor5 - QA"]
         }
     }
 }

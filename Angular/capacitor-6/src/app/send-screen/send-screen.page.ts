@@ -15,7 +15,6 @@ export class SendScreenPage implements OnInit {
 
   sendScreenName() {
     const that = this;
-    console.log('Send screen name: ', this.screenName);
     ContentsquarePlugin.sendScreenName(this.screenName);
     this.screenName = '';
   }

@@ -18,7 +18,6 @@ export class ContentsquareService {
     '/snapshot': 'Snapshot',
     '/spotify-app/tabs/tab1': 'Spotify homepage',
     '/spotify-app/tabs/tab2': 'Images test page',
-    '/tracking-tag': 'Tracking Tag',
     '/sr-masking': 'SR Masking',
     '/sr-masking/sr-pii': 'SR PII',
     '/sr-masking/sr-capture-elements': 'SR Capture Elements',
@@ -51,8 +50,6 @@ export class ContentsquareService {
   async sendScreenName(url: string) {
     if (!this.excludedURL.includes(url)) {
       const screenName = this.getScreenName(url);
-      console.log('Url: ' + url + ' -> Send screen name: ' + screenName);
-      let deviceInfo = await Device.getInfo();
       ContentsquarePlugin.sendScreenName(screenName)
         .then((res) => {
           console.log(res);
@@ -61,7 +58,7 @@ export class ContentsquareService {
           console.error(err);
         });
     } else {
-      console.log('Url: ' + url + ' -> Excluded URL ');
+      console.log(url + ' is an excluded URL ');
     }
   }
 }

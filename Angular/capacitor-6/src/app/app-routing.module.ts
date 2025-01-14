@@ -70,13 +70,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'tracking-tag',
-    loadChildren: () =>
-      import('./tracking-tag/tracking-tag/tracking-tag.module').then(
-        (m) => m.TrackingTagPageModule
-      ),
-  },
-  {
     path: 'sr-masking',
     loadChildren: () =>
       import('./sr-masking/sr-masking.module').then(

@@ -6,17 +6,19 @@ import ContentsquareModule
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var qaBridge: QAJavaScriptBridge?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Contentsquare.logLevel = .verbose
-        Contentsquare.csInApp = true
-
-        (window?.rootViewController as? CAPBridgeViewController)?.loadViewIfNeeded();
-        
-        qaBridge = QAJavaScriptBridge(webView: ((window?.rootViewController as? CAPBridgeViewController)?.webView)!)
-        
+        // When running from Xcode in debug mode, enable webView inspection 2 seconds after startup
+        #if DEBUG
+          if #available(macOS 13.3, iOS 16.4, tvOS 16.4, *) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                      if let vc = self.window?.rootViewController as? CAPBridgeViewController {
+                          vc.bridge?.webView?.isInspectable = true;
+                      }
+                }
+          }
+        #endif
         return true
     }
 
@@ -45,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         // Called when the app was launched with a url. Feel free to add additional processing here,
         // but if you want the App API to support tracking app url opens, make sure to keep this call
+        //Contentsquare.handle(url: url)
+        Contentsquare.handle(url: url)
         return ApplicationDelegateProxy.shared.application(app, open: url, options: options)
     }
 
