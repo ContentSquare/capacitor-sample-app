@@ -47,14 +47,6 @@ const routes: Routes = [
       import('./snapshot/snapshot.module').then((m) => m.SnapshotPageModule),
   },
   {
-    path: 'custom-var',
-
-    loadChildren: () =>
-      import('./custom-var/custom-var.module').then(
-        (m) => m.CustomVarPageModule
-      ),
-  },
-  {
     path: 'error-analysis',
 
     loadChildren: () =>

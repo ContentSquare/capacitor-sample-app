@@ -13,7 +13,6 @@ export class ContentsquareService {
     '/send-screen': 'Send Screen',
     '/transaction': 'Transaction',
     '/dynamic-var': 'Dynamic Var',
-    '/custom-var': 'Custom Var',
     '/parametres': 'Parametres',
     '/snapshot': 'Snapshot',
     '/spotify-app/tabs/tab1': 'Spotify homepage',
