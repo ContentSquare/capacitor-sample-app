@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-api-error"></ion-back-button>
+    </ion-buttons>
+    <ion-title>API Error</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>API Error</h2>
+  <form [formGroup]="APIErrorForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked" color="primary">HTTP Status</ion-label>
+        <ion-select formControlName="status">
+          <ion-select-option id="btn-apierror-200" value="200" selected>200: OK</ion-select-option>
+          <ion-select-option id="btn-apierror-301" value="301">301: Moved Permanently</ion-select-option>
+          <ion-select-option id="btn-apierror-400" value="400">400: Bad Request</ion-select-option>
+          <ion-select-option id="btn-apierror-401" value="401">401: Unauthorized</ion-select-option>
+          <ion-select-option id="btn-apierror-403" value="403">403: Forbidden</ion-select-option>
+          <ion-select-option id="btn-apierror-500" value="500">500: Internal Server Error</ion-select-option>
+          <ion-select-option id="btn-apierror-501" value="501">501: Not Implemented</ion-select-option>
+          <ion-select-option id="btn-apierror-502" value="502">502: Bad Gateway</ion-select-option>
+          <ion-select-option id="btn-apierror-503" value="503">503: Service Unavailable</ion-select-option>
+          <ion-select-option id="btn-apierror-504" value="504">504: Gateway Timeout</ion-select-option>
+          <ion-select-option id="btn-apierror-505" value="505">505: HTTP Version Not Supported</ion-select-option>
+        </ion-select>
+      </ion-item> 
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked" color="primary">HTTP Method</ion-label>
+        <ion-select formControlName="method">
+          <ion-select-option value="GET">GET</ion-select-option>
+          <ion-select-option value="POST">POST</ion-select-option>
+          <ion-select-option value="PUT">PUT</ion-select-option>
+          <ion-select-option value="DELETE">DELETE</ion-select-option>
+        </ion-select>
+      </ion-item> 
+    </ion-list>
+    <ion-item>
+      <ion-label position="stacked" color="primary">Query parameters</ion-label>
+      <ion-input formControlName="q_param" placeholder="First parameter"></ion-input>
+      <ion-input formControlName="q_second_param" placeholder="Second parameter"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" color="primary">Email</ion-label>
+      <ion-input formControlName="email" label="Email input" type="email" placeholder="email@domain.com"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block" id="btn-error-analysis">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <p style="margin-top: 5px; text-align: center; color:gray;">HTTP error generated from https://httpstatus-mgmt.eu-west-1.csq.io/</p>
+</ion-content>

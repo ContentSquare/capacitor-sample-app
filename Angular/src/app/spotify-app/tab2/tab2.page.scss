@@ -1,0 +1,27 @@
+@import url("../../../assets/css/testing-app.css");
+
+ion-content {
+  --background: var(--ion-color-dark);
+}
+
+/* Styles.css */
+
+.bg-search {
+  width: 100%;
+  height: 300px;
+  background-image: url("../../../assets/images/searching-for-the-right-person.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Autres styles que tu veux appliquer à cette classe */
+}
+
+.bg-remote {
+  width: 260px;
+  height: 60px;
+  background-image: url("https://contentsquare.com/fr-fr/wp-content/themes/kps3-contentsquare/public/assets/images/rebrand/logo.svg?tv=1.7.619");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Autres styles que tu veux appliquer à cette classe */
+}

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-sr-masking"></ion-back-button>
+    </ion-buttons>
+    <ion-title>SR Masking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-padding">
+    <ion-card-title> Block data collection for specific pages </ion-card-title>
+    <ion-card-subtitle>
+      This will exclude The Home page from SR
+    </ion-card-subtitle>
+
+    <ion-card-content>
+      <ion-button id="btn-exclude-url" (click)="excludeURLForReplay()">
+        Exclude HomePage URL
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <ion-card-title> PII Selectors </ion-card-title>
+
+    <ion-card-content>
+      <ion-button id="btn-navigate-pii" [routerLink]="['./sr-pii']">
+        <ion-icon slot="end" name="arrow-forward-outline"></ion-icon> Go to PII
+        Selectors Test Page</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <ion-card-title>Display content in a masked HTML page</ion-card-title>
+    <ion-card-subtitle></ion-card-subtitle>
+
+    <ion-card-content>
+      <ion-button id="btn-navigate-capture-elements" (click)="goToMaskedPage()">
+        <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        Go to Capture Test page
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <ion-card-title> Exclude HTML elements from the page</ion-card-title>
+    <ion-card-subtitle
+      >Add the data-cs-mask attribute to the HTML element(s)</ion-card-subtitle
+    >
+
+    <ion-card-content>
+      <p data-cs-mask style="font-size: 16px; color: red; font-weight: bold">
+        We should not see this in SR
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

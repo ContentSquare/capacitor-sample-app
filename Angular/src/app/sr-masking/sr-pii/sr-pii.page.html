@@ -1,0 +1,46 @@
+<ion-header data-cs-capture>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-sr-pii"></ion-back-button>
+    </ion-buttons>
+    <ion-title>SR PII Selectors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-padding">
+    <ion-card-title> Remove content/Personal Data </ion-card-title>
+    <ion-card-subtitle
+      >Each DOM element to be masked is identified thanks to its CSS
+      selector</ion-card-subtitle
+    >
+
+    <ion-card-content>
+      <div class="css-mask-element item1">
+        This item should NOT be visible in SR
+      </div>
+      <div>The avatar should NOT be visible in SR</div>
+      <ion-avatar>
+        <img src="/assets/avatar-gollum.jpg" />
+      </ion-avatar>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <ion-card-title> Remove attributes </ion-card-title>
+    <ion-card-subtitle
+      >Remove the defined attributes of the DOM elements from the elements
+      matching the CSS selectors</ion-card-subtitle
+    >
+
+    <ion-card-content>
+      <div>
+        'href' and 'name' attributes of this &lt;a&gt; tag should NOT be visible
+        in SR<br />
+        <a class=".link-page-7" href="https://google.fr" name="linkToGooglePage"
+          >Go To Google Web Page</a
+        >
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

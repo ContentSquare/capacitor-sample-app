@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button id="back-button-custom-error"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Custom Error</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Click to trigger custom errors</h2>
+  <ion-button
+    id="btn-customerror-throwcustomerror"
+    type="button"
+    (click)="throwCustomError()"
+    id="throwCustomError"
+    aria-label="throwCustomError"
+    expand="block"
+  >
+    Throw custom error
+  </ion-button>
+  <ion-button
+    id="btn-customerror-throwcustomerrorwithattributes"
+    type="button"
+    (click)="throwCustomErrorWithAttributes()"
+    id="throwCustomErrorWithAttributes"
+    expand="block"
+    aria-label="throwCustomErrorWithAttributes"
+  >
+    Throw custom error with with attributes
+  </ion-button>
+  <ion-button
+    id="btn-customerror-throwcustomerrorwithîi"
+    type="button"
+    (click)="throwCustomErrorWithPII()"
+    id="throwCustomErrorWithPII"
+    expand="block"
+    aria-label="throwCustomErrorWithPII"
+  >
+    Throw custom error with with PII and attributes
+  </ion-button>
