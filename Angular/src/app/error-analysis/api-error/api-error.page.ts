@@ -26,7 +26,7 @@ export class ApiErrorPage implements OnInit {
     let params = new HttpParams();
     const status = this.APIErrorForm.value.status;
     const method = this.APIErrorForm.value.method;
-    const URL = 'https://httpstatus-dev.eu-west-1.csq.fr';
+    const URL = 'https://httpstatus-dev.eu-west-1.csq.io';
 
     if (this.APIErrorForm.value.q_param != '') {
       params = params.append('firstParameter', this.APIErrorForm.value.q_param);
