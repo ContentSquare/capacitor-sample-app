@@ -7,7 +7,8 @@
 
 ## 🧐 Pick your choice of JavaScript Framework
 
-* **[React](https://github.com/ContentSquare/capacitor-sample-app/tree/main/React)** - an Ionic Capacitor sample app that is built with the React Framework.
+* **[React](https://github.com/ContentSquare/capacitor-sample-app/tree/main/React)** - an Ionic Capacitor sample app that is built with React.
+* **[Angular](https://github.com/ContentSquare/capacitor-sample-app/tree/main/Angular)** - an Ionic Capacitor sample app that is built with the Angular Framework and Capacitor 6.
 
 Note: if your JavaScript Framework is not represented in our sample apps, please let us know.
 
