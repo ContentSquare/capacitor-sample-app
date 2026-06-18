@@ -30,7 +30,7 @@
     "@capacitor/ios": "^6.0.0",
     "@capacitor/keyboard": "^6.0.0",
     "@capacitor/status-bar": "^6.0.0",
-    "@contentsquare/capacitor-plugin": "6.0.0",
+    "@contentsquare/capacitor-plugin": "6.3.0",
     "@ionic/angular": "^7.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
